@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Lindsey</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe6f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: none; /* Hide the letter initially */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 36px;
+            margin-bottom: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .hearts {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #ff69b4;
+            clip-path: polygon(50% 0%, 100% 35%, 82% 100%, 50% 75%, 18% 100%, 0% 35%);
+            margin: 0 10px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* Style for the button */
+        .show-letter-btn {
+            margin-top: 50px;
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .show-letter-btn:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to show the letter and play the song -->
+    <button class="show-letter-btn" onclick="showLetter()">Please click on it Lindsey!(lower sound volume first)</button>
+
+    <div class="container" id="letter">
+        <h1>Dear Lindsey 💖</h1>
+        <p>You are amazing, you are the sweetest, the prettiest, the funniest, and just perfect Lindsey. Just be happy in life, and I know you're doing your best with things.</p>
+        <p>I know you're doing your bestttttttt with everything. Take it easy, don't force anything, you're doing good baby. I am so proud of you, and don't you ever think you're not good enough.</p>
+        <p>If you're not good enough, then no one is! You're literally the best baby, and I never asked for more. All I want is for you to be happy. Do your best in that baby, don't care about anyone else.</p>
+        <p>Just be happy, and I'll be here whenever you need me. I'm never leaving you alone. I will always be here, beside you, supporting and cheering you up.</p>
+        <p>I'm so in love with you. I will do better next time. I will do my best. I will love you forever and ever. I love you so so so much Lindsey.</p>
+        <p>You make me feel special and appreciated. You genuinely make me happy, and you're making me a better person. You, just being yourself, are enough and always will be.</p>
+        <p>I'm really sorry if I said things wrong, maybe I worded it poorly. I love you with all my heart.</p>
+        <p>Love, Zaid ❤️</p>
+
+        <div class="hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <!-- Audio section with song -->
+    <audio id="song">
+        <source src="The 1975  About You.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Script to show the letter and play the song -->
+    <script>
+        function showLetter() {
+            var letter = document.getElementById('letter');
+            var audio = document.getElementById('song');
+            
+            letter.style.display = 'block'; // Show the letter
+            audio.play().catch(error => {
+                console.log("Autoplay prevented: ", error);
+            });
+        }
+    </script>
+
+</body>
+</html>
